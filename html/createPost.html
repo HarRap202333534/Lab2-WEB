@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+        #editor { 
+            position: absolute;
+            top: 150px;
+            right: 200px;
+            bottom: 200px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <form id="postForm">
+        <label for="title">Title</label>
+        <input id="title" type="text">
+        <label for="author">Author</label>
+        <input id="author" type="text">
+        <h1>Contenu</h1>
+        <div id="editor" width="400px" height="200px"></div>
+        <button type="button" onclick="createPost(editor.getValue())">Submit</button>
+    </form>
+    
+        
+    
+    <script src="../src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/html");
+        editor.resize();
+    </script>
+    <script src="../script/createPost.js"></script>
+</body>
+</html>

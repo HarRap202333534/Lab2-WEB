@@ -1,0 +1,2 @@
+J'ai modifié mon SASS de façon à ne plus modifier les classes de Bootstrap et j'ai ajusté le responsive
+pour qu'il y ait soit 1 colonne ou 3 colonnes.
