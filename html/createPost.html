@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <style type="text/css" media="screen">
         #editor { 
             position: absolute;
@@ -21,8 +22,9 @@
         <label for="author">Author</label>
         <input id="author" type="text">
         <h1>Contenu</h1>
-        <div id="editor" width="400px" height="200px"></div>
-        <button type="button" onclick="createPost(editor.getValue())">Submit</button>
+        <div id="editor" width="1px" height="1px"></div>
+        <button type="button" id="button" onclick="createPost(editor.getValue())">Submit</button>
+        <div id="dialog"></div>
     </form>
     
         
@@ -34,6 +36,8 @@
         editor.session.setMode("ace/mode/html");
         editor.resize();
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
     <script src="../script/createPost.js"></script>
 </body>
 </html>
