@@ -4,6 +4,15 @@ async function getPosts() {
     return json;
 }
 
+async function formatDate(date) {
+    if (date < 10) {
+        return "0" + date;
+    }
+    else {
+        return date;
+    }
+}
+
 async function createPost(contenu) {
     $('#dialog').dialog({
         modal: true,
@@ -16,7 +25,7 @@ async function createPost(contenu) {
                 $(this).dialog("close");
                 const id = JSON.stringify((await getPosts()).length + 1);
                 let date = new Date();
-                const now = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
+                const now = date.getFullYear() + "-" + await formatDate(date.getMonth()) + "-" + await formatDate(date.getDay());
                 const form = document.forms["postForm"];
                 const title = form["title"].value;
                 const author = form["author"].value;
